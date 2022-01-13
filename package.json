@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "coinkey": "^3.0.0",
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "ethers": "^5.5.3",
+    "request": "^2.88.2"
   }
 }
