@@ -1,17 +1,8 @@
 /*
-*
-* Chức năng tạo private key theo thứ tự tuần hoàn sau đó tạo địa chỉ ví từ key đó -> tiếp đến là check xem ví có tiền không?
-*
-* Lệnh chạy trên window
-cd ~ ; cd F:\AppServ\www\nodejs\privatekeys ; node run
-*
-* Lệnh chạy trên linux
-/usr/bin/node /root/njs/privatekeys/address_hex.js
-*
-* Tài liệu tham khảo
-https://github.com/cryptocoinjs/coinkey
-*
-*/
+ *
+ * Chức năng tạo private key theo thứ tự tuần hoàn sau đó tạo địa chỉ ví từ key đó -> tiếp đến là check xem ví có tiền không?
+ *
+ */
 
 //
 'use strict';
@@ -25,14 +16,14 @@ var ethers = require('ethers');
 var fs = require('fs');
 var request = require('request');
 var http = require('http2');
-var http = require('http');
+//var http = require('http');
 
 
 /*
  * config
  */
 var debug_code = false;
-var debug_code = true;
+//var debug_code = true;
 
 // độ dài của chuỗi khóa của bitcoin dạng HEX
 var str64 = '';
@@ -127,6 +118,7 @@ function key_dang_chu(str) {
 
 function ___run() {
     //console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -');
+    console.log(Math.random());
 
     //
     var begin_i = 0;
@@ -259,8 +251,8 @@ if (requestIP != '') {
             console.log('https://' + open_domain + ':' + open_port);
 
             // create a server object -> sử dụng http2
-            http.createServer(options, function (request, response) {
-            //http.createSecureServer(options, function (request, response) {
+            //http.createServer(options, function (request, response) {
+            http.createSecureServer(options, function (request, response) {
                 /*
                  * setHeader phải chạy đầu tiên, xong thích làm gì thì làm
                  */
